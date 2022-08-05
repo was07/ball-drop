@@ -22,6 +22,7 @@ balls = [Ball(screen,
 
  
 # Game loop.
+run = True
 while True:
     screen.fill((0, 0, 0))
     
@@ -29,10 +30,14 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+        elif event.type == KEYDOWN:
+            if event.key == K_SPACE:
+                run = not run
     
     # Update.
-    for ball in balls:
-        ball.update()
+    if run:
+        for ball in balls:
+            ball.update()
     
     # Draw.
     for ball in balls:
