@@ -34,7 +34,7 @@ class Ball:
             self.rect.y = self.surface.get_height() - self.rect.height
         elif self.rect.y < 0:
             self.fall_speed = -self.fall_speed * self.bounce
-            self.rect.y = self.rect.height/2
+            self.rect.y = self.rect.height
         
         if .5 > self.fall_speed > -.5: self.fall_speed += 1
         else: self.fall_speed += 0.1
